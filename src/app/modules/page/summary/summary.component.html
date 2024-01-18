@@ -1,0 +1,14 @@
+<div class="container w-full h-full flex flex-column justify-content-center align-items-center">
+  <p-card class="w-6" header="Summary">
+    <div class="flex flex-column gap-4 p-4">
+      <div>Name: {{ userName }}</div>
+      <div>Group: {{ groupName }}</div>
+      <div>Score: {{ result?.score | number }}/{{ result?.maxScore | number }}</div>
+      <div>Rank: {{ result?.rankNo | number }}</div>
+    </div>
+    <div class="flex justify-content-center gap-2 mt-4">
+      <p-button (onClick)="backToHome()" type="button" label="Home"/>
+    </div>
+  </p-card>
+</div>
+

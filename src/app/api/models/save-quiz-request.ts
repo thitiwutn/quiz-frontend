@@ -1,8 +1,8 @@
 /* tslint:disable */
-import { QuestionModel } from './question-model';
+import { QuestionRequest } from './question-request';
 export interface SaveQuizRequest {
   groupId?: number;
-  questions?: Array<QuestionModel>;
+  questions?: Array<QuestionRequest>;
   quizId?: number;
   userId?: number;
 }

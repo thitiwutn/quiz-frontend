@@ -136,14 +136,14 @@ class QuizService extends __BaseService {
   }
 
   /**
-   * @param quizId undefined
+   * @param userId undefined
    * @return Success
    */
-  getApiQuizResultResponse(quizId?: number): __Observable<__StrictHttpResponse<QuizResultResponseApiResponse>> {
+  getApiQuizResultResponse(userId?: number): __Observable<__StrictHttpResponse<QuizResultResponseApiResponse>> {
     let __params = this.newParams();
     let __headers = new HttpHeaders();
     let __body: any = null;
-    if (quizId != null) __params = __params.set('quizId', quizId.toString());
+    if (userId != null) __params = __params.set('userId', userId.toString());
     let req = new HttpRequest<any>(
       'GET',
       this.rootUrl + `/api/Quiz/Result`,
@@ -162,11 +162,11 @@ class QuizService extends __BaseService {
     );
   }
   /**
-   * @param quizId undefined
+   * @param userId undefined
    * @return Success
    */
-  getApiQuizResult(quizId?: number): __Observable<QuizResultResponseApiResponse> {
-    return this.getApiQuizResultResponse(quizId).pipe(
+  getApiQuizResult(userId?: number): __Observable<QuizResultResponseApiResponse> {
+    return this.getApiQuizResultResponse(userId).pipe(
       __map(_r => _r.body as QuizResultResponseApiResponse)
     );
   }

@@ -6,6 +6,7 @@ import {HomeComponent} from "./home/home.component";
 import {RegisterComponent} from "./register/register.component";
 import {ContinueComponent} from "./continue/continue.component";
 import {QuizComponent} from "./quiz/quiz.component";
+import {SummaryComponent} from "./summary/summary.component";
 
 const routes: Routes = [
   {
@@ -23,6 +24,10 @@ const routes: Routes = [
   {
     path: 'quiz',
     component: QuizComponent,
+  },
+  {
+    path: 'summary',
+    component: SummaryComponent,
   }
 ];
 

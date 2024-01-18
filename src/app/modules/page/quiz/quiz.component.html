@@ -1,4 +1,4 @@
-<div class="container w-full h-full flex flex-column justify-content-center align-items-center mt-8">
+<div class="container w-full h-full overflow-scroll flex flex-column justify-content-center align-items-center">
   <p-card class="w-6" header="Quiz : {{groupName}}">
     <div class="flex flex-column gap-4 pl-2">
       <div *ngFor="let question of quizData?.questions; let i = index" class="question-box">
@@ -13,7 +13,7 @@
         </div>
       </div>
     </div>
-    <div class="flex justify-content-center gap-2">
+    <div class="flex justify-content-center gap-2 mt-4">
       <p-button (onClick)="saveQuiz()"  type="button" label="Save"/>
       <p-button (onClick)="submitQuiz()" type="button" label="Submit"/>
     </div>

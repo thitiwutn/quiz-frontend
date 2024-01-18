@@ -13,6 +13,7 @@ import { QuizComponent } from './quiz/quiz.component';
 import {TriStateCheckboxModule} from "primeng/tristatecheckbox";
 import {CheckboxModule} from "primeng/checkbox";
 import {RadioButtonModule} from "primeng/radiobutton";
+import { SummaryComponent } from './summary/summary.component';
 
 
 @NgModule({
@@ -21,6 +22,7 @@ import {RadioButtonModule} from "primeng/radiobutton";
     RegisterComponent,
     ContinueComponent,
     QuizComponent,
+    SummaryComponent,
   ],
   imports: [
     PageRoutingModule,

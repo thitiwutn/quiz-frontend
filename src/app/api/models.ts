@@ -3,6 +3,7 @@ export { CreateUser } from './models/create-user';
 export { GroupModel } from './models/group-model';
 export { GroupModelICollectionApiResponse } from './models/group-model-icollection-api-response';
 export { QuestionModel } from './models/question-model';
+export { QuestionRequest } from './models/question-request';
 export { QuizResponse } from './models/quiz-response';
 export { QuizResponseApiResponse } from './models/quiz-response-api-response';
 export { QuizResultResponse } from './models/quiz-result-response';
