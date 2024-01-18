@@ -63,6 +63,8 @@
         },
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+          },
           "configurations": {
             "production": {
               "browserTarget": "quiz-frontend:build:production"
@@ -100,5 +102,8 @@
         }
       }
     }
+  },
+  "cli": {
+    "analytics": "e15f857f-61ab-402d-b881-c645c86bd96c"
   }
 }

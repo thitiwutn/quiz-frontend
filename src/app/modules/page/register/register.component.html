@@ -1,0 +1,20 @@
+<div class="container w-full h-full flex flex-column justify-content-center align-items-center">
+  <p-card class="w-6" header="Register">
+    <form [formGroup]="form" class="flex flex-column gap-2">
+      <div class="w-full flex align-items-center">
+        <label class="w-2 text-right pr-2">User Group<span class="p-error">*</span> :</label>
+        <p-dropdown [options]="groups" styleClass="w-20rem" formControlName="groupId" optionLabel="name"
+                    optionValue="id" [autoDisplayFirst]="false"
+                    [showClear]="false" placeholder="Please select user group"></p-dropdown>
+      </div>
+
+      <div class="w-full flex align-items-center">
+        <label class="w-2 text-right pr-2">Name<span class="p-error">*</span> :</label>
+        <input pInputText class="w-20rem" formControlName="name"/>
+      </div>
+
+      <p-button class="col-offset-2" (onClick)="clickGo()" [styleClass]="'w-5rem'" type="button" label="Go"/>
+    </form>
+  </p-card>
+</div>
+
