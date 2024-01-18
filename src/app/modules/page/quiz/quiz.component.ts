@@ -71,27 +71,46 @@ export class QuizComponent implements OnInit {
         icon: 'error',
         title: 'Oops...',
         text: 'You have to complete some questions.',
+        timer: 1500,
+        showConfirmButton: false,
       });
       return;
     }
-    const body = this.bodyForSave();
-    this.quizService.postApiQuizSave(body).subscribe({
-      next: (res) => {
-        if (res.success) {
-          Swal.fire({
-            icon: 'success',
-            title: 'Success',
-            text: 'Save quiz successfully',
-          }).then(() => {
-            this.router.navigate(['']);
-          });
-        } else {
-          Swal.fire({
-            icon: 'error',
-            title: 'Oops...',
-            text: res.errorMessage,
-          });
-        }
+    Swal.fire({
+      icon: 'question',
+      showCancelButton: true,
+      confirmButtonText: 'Yes',
+      cancelButtonText: 'No',
+      confirmButtonColor: '#14B8A6',
+      cancelButtonColor: '#d33',
+      reverseButtons: true,
+      focusConfirm: true,
+      title: 'Are you sure?',
+      text: 'Do you want to save quiz?',
+    }).then((result) => {
+      if (result.isConfirmed) {
+        const body = this.bodyForSave();
+        this.quizService.postApiQuizSave(body).subscribe({
+          next: (res) => {
+            if (res.success) {
+              Swal.fire({
+                icon: 'success',
+                title: 'Success',
+                text: 'Save quiz successfully',
+                timer: 1500,
+                showConfirmButton: false,
+              }).then(() => {
+                this.router.navigate(['']);
+              });
+            } else {
+              Swal.fire({
+                icon: 'error',
+                title: 'Oops...',
+                text: res.errorMessage,
+              });
+            }
+          }
+        });
       }
     });
   }
@@ -106,26 +125,41 @@ export class QuizComponent implements OnInit {
       });
       return;
     }
-    const body = this.bodyForSave();
-    this.quizService.postApiQuizSubmit(body).subscribe({
-      next: (res) => {
-        if (res.success) {
-          Swal.fire({
-            icon: 'success',
-            title: 'Success',
-            text: 'Save quiz successfully',
-            timer: 2000,
-            showConfirmButton: false,
-          }).then(() => {
-            this.router.navigate(['summary']);
-          });
-        } else {
-          Swal.fire({
-            icon: 'error',
-            title: 'Oops...',
-            text: res.errorMessage,
-          });
-        }
+    Swal.fire({
+      icon: 'question',
+      showCancelButton: true,
+      confirmButtonText: 'Yes',
+      cancelButtonText: 'No',
+      confirmButtonColor: '#14B8A6',
+      cancelButtonColor: '#d33',
+      reverseButtons: true,
+      focusCancel: true,
+      title: 'Are you sure?',
+      text: 'Do you want to submit quiz?',
+    }).then((result) => {
+      if (result.isConfirmed) {
+        const body = this.bodyForSave();
+        this.quizService.postApiQuizSubmit(body).subscribe({
+          next: (res) => {
+            if (res.success) {
+              Swal.fire({
+                icon: 'success',
+                title: 'Success',
+                text: 'Save quiz successfully',
+                timer: 2000,
+                showConfirmButton: false,
+              }).then(() => {
+                this.router.navigate(['summary']);
+              });
+            } else {
+              Swal.fire({
+                icon: 'error',
+                title: 'Oops...',
+                text: res.errorMessage,
+              });
+            }
+          }
+        });
       }
     });
   }

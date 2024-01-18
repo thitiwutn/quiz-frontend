@@ -63,7 +63,7 @@ export class RegisterComponent implements OnInit {
             icon: 'success',
             title: 'Success',
             text: 'Register success',
-            timer: 2000,
+            timer: 1500,
             showConfirmButton: false,
           });
           this.router.navigateByUrl('/quiz');
